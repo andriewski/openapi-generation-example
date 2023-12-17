@@ -15,6 +15,10 @@ public class PetsService {
     }
 
     public Set<Pet> listPets(Integer limit) {
+        if (limit != null && limit == 1) {
+            return Set.of(new Pet(1L, "lorry"));
+        }
+
         return Set.of(new Pet(1L, "lorry"), new Pet(2L, "howdy"));
     }
 
